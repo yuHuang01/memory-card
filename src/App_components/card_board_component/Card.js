@@ -1,8 +1,10 @@
-const Card = ({imgId, imgTitle, imgSrc, orderNum}) => {
+const Card = ({imgId, imgTitle, imgSrc, score, setScore}) => {
   return (
-    <div className = "card" id = { imgId }>
+    <div className = "card" id = { imgId } onClick = {() => {
+      setScore(score + 1);
+    }}>
       <img className = 'cardImgs' src = { imgSrc } alt = { imgTitle }/>
-      <h3>{ imgTitle }</h3>
+      <p>{ imgTitle }</p>
     </div>
   );
 }
