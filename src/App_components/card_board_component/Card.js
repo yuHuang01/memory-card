@@ -1,4 +1,4 @@
-const Card = ({imgId, imgTitle, imgSrc}) => {
+const Card = ({imgId, imgTitle, imgSrc, orderNum}) => {
   return (
     <div className = "card" id = { imgId }>
       <img className = 'cardImgs' src = { imgSrc } alt = { imgTitle }/>
