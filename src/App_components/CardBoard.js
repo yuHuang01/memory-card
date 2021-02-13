@@ -7,18 +7,20 @@ const myCardDatas = cardDatas;
 
 const [ranIds, setRanIds] = useState([]);
   
-  
+const chooseNewRanIds = () => {
+  let newRanNums = [];
+    while(newRanNums.length !== 5){
+      const ranId = `${Math.floor(Math.random() * 16)}`
+      if(!newRanNums.includes(ranId)){
+        (newRanNums.length % 2)? newRanNums.push(ranId) : newRanNums.unshift(ranId);
+      }
+    }
+  setRanIds(newRanNums);
+};
 
 useEffect(() => {
   setRanIds([]);
-  let newRanNums = [];
-  while(newRanNums.length < 5){
-    const ranId = `${Math.floor(Math.random() * 16)}`
-    if(!newRanNums.includes(ranId)){
-      (newRanNums.length % 2)? newRanNums.push(ranId) : newRanNums.unshift(ranId);
-    }
-  }
-  setRanIds(newRanNums);
+  chooseNewRanIds();
 }, [score])
 
   return (
