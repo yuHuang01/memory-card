@@ -1,9 +1,15 @@
-const CardBoard = () => {
+import Card from './card_board_component/Card';
+import cardDatas from './card_board_component/cardDatas';
+
+const CardBoard = ({ cards }) => {
+const myCardDatas = cardDatas;
+
   return (
     <div id="CardBoard">
-      <h1>CArd1</h1>
-      <h1>CArd2</h1>
-      <h1>Card3</h1>
+      {myCardDatas.map(card => {
+        return (<Card key = { card.imgId } imgId = { card.imgId } imgTitle = { card.imgTitle } imgSrc = { card.imgSrc }/> )
+      })}
+      
     </div>
   );
 }

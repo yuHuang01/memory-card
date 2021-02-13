@@ -7,6 +7,10 @@ function App() {
   const [highestScore, setHighestScore] = useState(0);
   const [clicked, setClicked] = useState([]);
 
+  const cards = [
+
+  ];
+
   useEffect(() => {
     if(score > highestScore){
       setHighestScore(score);
@@ -17,7 +21,7 @@ function App() {
     <div className="App">
       <h1>Memory Card</h1>
       <ScoreBoard score = { score } highestScore = { highestScore }/>
-      <CardBoard />
+      <CardBoard cards = { cards }/>
     </div>
   );
 }
