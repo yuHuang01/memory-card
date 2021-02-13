@@ -1,6 +1,7 @@
 html {
   height: 100%;
   padding: 0px;
+  overflow-y: hidden;
 }
 body{
   height: 100%;
@@ -12,9 +13,11 @@ body{
 #root{
   height: 100%;
   margin: 0px;
+  padding: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 /* App.js */
@@ -26,6 +29,9 @@ body{
   justify-self: center;
 
   width: 100%;
+
+  padding: 0px;
+  margin: 0px;
 }
 
 /* ScoreBoard.js */
@@ -80,7 +86,10 @@ body{
 .cardImgs {
   width: 180px;
   height: 130px;
-  
+  pointer-events: none;
+}
+.card p {
+  pointer-events: none;
 }
 .card:hover {
   box-shadow: 6px 11px 33px -4px rgba(0,0,0,0.68);
@@ -93,4 +102,27 @@ body{
   to {
     transform: rotateY(0deg);
   }
+}
+
+/*GameOver.js*/
+#GameOver {
+  height: 100%;
+  width: 100%;
+
+  background-color: rgba(0, 0, 0, 0.76);
+  color: white;
+
+  position: absolute;
+  top: 0px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#GameOver h1 {
+  font-size: 80px;
+}
+#GameOver p {
+  font-size: 30px;
 }
