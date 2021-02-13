@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect, useState } from "react";
+import CardBoard from "./App_components/CardBoard";
+import ScoreBoard from "./App_components/ScoreBoard";
 
 function App() {
+  const [score, setScore] = useState(0);
+  const [highestScore, setHighestScore] = useState(0);
+  const [clicked, setClicked] = useState([]);
+
+  useEffect(() => {
+    if(score > highestScore){
+      setHighestScore(score);
+    };
+  }, [ score ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Memory Card</h1>
+      <ScoreBoard score = { score } highestScore = { highestScore }/>
+      <CardBoard />
     </div>
   );
 }
